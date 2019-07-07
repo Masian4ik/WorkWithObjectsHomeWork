@@ -9,7 +9,7 @@ public class User extends Object {
     private String firstName;
     private String lastName;
     private Date dateOfBirth;
-    private Gender gender;
+    private final Gender gender;
 
     public String getLogin() {
         return login;
@@ -51,16 +51,8 @@ public class User extends Object {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public Gender getGender() {
-        return gender;
-    }
-
-    public void setGender(Gender gender) {
+    public User(Gender gender) {
         this.gender = gender;
-    }
-
-    public User(){
-
     }
 
     public User(String login, String password, String firstName, String lastName, Date dateOfBirth, Gender gender) {

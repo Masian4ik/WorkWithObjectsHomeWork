@@ -1,22 +1,33 @@
 package com.mainacad;
 
-import com.mainacad.model.Gender;
-import com.mainacad.model.User;
+import com.mainacad.model.*;
+import com.mainacad.service.CartService;
 import com.mainacad.service.UserGenerationService;
 
 import java.util.Date;
 
 public class ApplicationRunner {
 
+    private static final String PROJECT_DIR_PATH = System.getProperty("user.dir");
+
 
     public static void main(String[] args) {
 
-        Date birthDay = UserGenerationService.getDate(1987,11,22);
-        User user1 = new User("masian4ik", "123456", "Maxim", "Novikov", birthDay,Gender.MALE);
-        User user2 = new User("masian", "123456", "Maxim", "Novikov", birthDay,Gender.MALE);
+        UserGenerationService userGenerationService = new UserGenerationService();
 
-        System.out.println(user1);
-        System.out.println(user1.equals(user2));
+        Date birthDay = UserGenerationService.getDate(1987, 11, 22);
+
+            User user = new User("masian4ik", "123456", "Maxim", "Novikov", birthDay, Gender.MALE);
+
+            Item item = new Item("beer", "Heiniken", "10");
+
+            Order order = new Order(item, "15");
+
+            Cart cart = new Cart(user, order, new Date().getTime());
+
+            System.out.println(CartService.getTotalSum(cart) );
+
+
 
 
 

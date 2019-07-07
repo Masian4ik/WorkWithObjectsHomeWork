@@ -30,8 +30,16 @@ public class Cart {
         this.time = time;
     }
 
+    public Cart() {
+    }
+
+    public Cart(User user, Order order, Long time) {
+        this.user = user;
+        this.order = order;
+        this.time = time;
 
 
+    }
 }
 
 
