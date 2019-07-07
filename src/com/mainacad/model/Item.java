@@ -3,7 +3,7 @@ package com.mainacad.model;
 public class Item {
     private String article;
     private String name;
-    private String price;
+    private Double price;
 
     public String getArticle() {
         return article;
@@ -21,25 +21,24 @@ public class Item {
         this.name = name;
     }
 
-    public String getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public Item(String article, String name, Double price) {
+        this.article = article;
+        this.name = name;
         this.price = price;
     }
 
     public Item() {
     }
-
-    public Item(String article, String name, String price) {
-        this.article = article;
-        this.name = name;
-        this.price = price;
-
-
-    }
 }
+
 
 
 

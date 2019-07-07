@@ -19,13 +19,16 @@ public class ApplicationRunner {
 
             User user = new User("masian4ik", "123456", "Maxim", "Novikov", birthDay, Gender.MALE);
 
-            Item item = new Item("beer", "Heiniken", "10");
+            Item item = new Item("Beer", "Heiniken", (double) 10);
 
-            Order order = new Order(item, "15");
+            Order order = new Order(item, 15);
 
             Cart cart = new Cart(user, order, new Date().getTime());
 
             System.out.println(CartService.getTotalSum(cart) );
+
+
+
 
 
 
